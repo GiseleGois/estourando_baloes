@@ -1,4 +1,5 @@
 let timerId = null;
+var nomeUsuario;
 
 function iniciaJogo() {
 
@@ -6,7 +7,10 @@ function iniciaJogo() {
 
     let nivel_jogo = url.replace("?", "");
 
-    alert(`Nivel de jogo: ${nivel_jogo}, Boa sorte!`);
+    nomeUsuario = prompt("Insira seu nome");
+
+    alert(`Nivel de jogo: ${nivel_jogo}, Boa sorte ${nomeUsuario} !`);
+
 
     let tempo_segundos = 0;
 
@@ -91,7 +95,7 @@ function pontuacao(acao) {
 
 function situacao_jogo(baloes_inteiros) {
     if (baloes_inteiros == 0) {
-        alert('Parabéns, voce consguiu estourar todos os balões a tempo!');
+        alert(`Parabéns ${nomeUsuario}, voce consguiu estourar todos os balões a tempo!`);
         parar_jogo();
     }
 }
